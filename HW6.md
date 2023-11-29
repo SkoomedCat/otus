@@ -16,13 +16,18 @@
     дайте новой роли право на подключение к базе данных testdb
     дайте новой роли право на использование схемы testnm
     дайте новой роли право на select для всех таблиц схемы testnm
+    
     ```
     GRANT CONNECT ON DATABASE testdb TO readonly;
     GRANT ALL ON SCHEMA testnm TO readonly;
     GRANT SELECT ON ALL TABLES IN SCHEMA testnm TO readonly;
+    
     ```
     создайте пользователя testread с паролем test123
+    CREATE USER testread;
+    ALTER USER testread WITH PASSWORD test123;
     дайте роль readonly пользователю testread
+    `GRANT readonly TO testread;`
     зайдите под пользователем testread в базу данных testdb
     сделайте select * from t1;
     получилось? (могло если вы делали сами не по шпаргалке и не упустили один существенный момент про который позже)
